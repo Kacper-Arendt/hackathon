@@ -21,8 +21,8 @@ const defaultState: IContext = {
     to: null,
     steps:{
         transport: 1,
-        outfit: true,
-        food: true,
+        outfit: 1,
+        food: 1,
         alcohol: 1,
         attractions: 1,
         hotel: 1
