@@ -1,18 +1,24 @@
-import React, { createContext } from "react";
+import React, {createContext, useState} from "react";
 
 export type QuestionKey = "transport" | "outfit" | "food" | "alcohol" | "attractions" |"hotel"
 
 interface IContext  {
-    distance: number
+    distance: string | null
+    from: string | null;
+    to: string | null;
     steps: Record<QuestionKey, string | number | boolean>
     setStep: (step: QuestionKey, value: any)=> void
-    setDistance: React.Dispatch<React.SetStateAction<number>>
+    setDistance: (value: string)=> void
     currentStep: QuestionKey
     setCurrentStep: Function
+    setTo: (value: string)=>void
+    setFrom: (value: string)=>void
 }
 
 const defaultState: IContext = {
-    distance: 0,
+    distance:  null,
+    from: null,
+    to: null,
     steps:{
         transport: "bus",
         outfit: true,
@@ -24,8 +30,9 @@ const defaultState: IContext = {
     setStep: (step: QuestionKey, value: any)=> {},
     setDistance: value => {},
     currentStep: "transport",
-    setCurrentStep: (value: QuestionKey)=>{}
-
+    setCurrentStep: (value: QuestionKey)=>{},
+    setTo: (value: string)=>{},
+    setFrom: (value: string)=>{},
 }
 
 
@@ -36,6 +43,8 @@ export const ContextProvider = ({ children }: React.PropsWithChildren) => {
     const [steps, setSteps] = React.useState(defaultState.steps)
     const [distance, setDistance] = React.useState(defaultState.distance)
     const [currentStep, setCurrentStep] = React.useState<QuestionKey>(defaultState.currentStep)
+    const [from, setFrom] = useState<string | null>(null);
+    const [to, setTo] = useState<string | null>(null);
 
     const setStep = (step: QuestionKey, value: any) =>{
         setSteps(prev=> ({...prev, [step]: value}))
@@ -44,7 +53,7 @@ export const ContextProvider = ({ children }: React.PropsWithChildren) => {
     return (
         <Context.Provider
             value={{
-                steps,setStep, distance,setDistance, currentStep, setCurrentStep
+                steps,setStep, distance,setDistance, currentStep, setCurrentStep, from, setFrom, to, setTo
             }}
         >
             {children}

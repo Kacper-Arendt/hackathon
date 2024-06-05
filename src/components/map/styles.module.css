@@ -1,26 +1,57 @@
-.placesAutocomplete{
-     position: relative;
-    
-    @media (min-width: 768px){
+.placesAutocomplete {
+    position: relative;
+
+    @media (min-width: 768px) {
         max-width: 400px;
     }
-    
+
 }
 
-.placesAutocomplete ul{
+.placesAutocomplete ul {
     position: absolute;
     z-index: 1;
     margin-top: 8px;
     width: 100%;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
-    @media (min-width: 768px){
+
+    @media (min-width: 768px) {
         flex-direction: row;
     }
+
+}
+
+.distanceSummary {
+    position: absolute;
+    right: 50%;
+    top: 75%;
+    transform: translate(50%, -50%);
+    width: 100%;
+    z-index: 10;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 350px;
+    box-shadow: 0px 4px 12px 0px #0F374180;
+    text-align: center;
     
+    
+    @media (min-width: 768px) { 
+        right: 15%;
+        top: 70%;
+    }
+}
+
+.distanceSummary p{
+    color: #6C98DB;
+    font-weight: bold;
+    font-size: 18px;
 }
