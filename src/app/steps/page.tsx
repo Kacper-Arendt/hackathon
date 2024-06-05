@@ -79,10 +79,10 @@ export default function Steps() {
                     header="Co planujesz robić?" 
                     img="https://i1.jbzd.com.pl/contents/2021/11/normal/bAnnaP9HAwWaZPye9hSU56Aet2dOs888.png"
                     items={[{
-                    label: "🏖️ Leżeć na plaży i opalać się",
+                    label: "🏖️ Leżeć na plaży i się opalać",
                     value: 1
                 }, {
-                    label: "🚲 Jeździć na rowerze",
+                    label: "🚵 Jeździć na rowerze",
                     value: 2
                 }, {
                     label: "🛥️ Pływać motorówką",
