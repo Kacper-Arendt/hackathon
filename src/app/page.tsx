@@ -1,9 +1,15 @@
-import Image from "next/image";
-
+'use client'
+import s from "./styles.module.css"
+import {Map} from "@/components/map/Map";
 export default function Home() {
+  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    
-    </main>
+      <main className={s.main}
+      >
+        <p className={s.title}>Generator śladu węglowego imienia Taylor Swift</p>
+        <div className={s.bg} />
+        <Map />
+
+      </main>
   );
 }
