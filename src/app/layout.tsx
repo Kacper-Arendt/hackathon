@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className={inter.className} style={{overflow: 'hidden'}}>
+        <body className={inter.className} style={{}}>
         <ContextProvider>
             {children}
         </ContextProvider>
