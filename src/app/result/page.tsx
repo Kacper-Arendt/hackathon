@@ -1,6 +1,8 @@
 'use client'
 import React from "react";
 import {Context, QuestionKey} from "@/app/steps/Context";
+import {Range} from "@/app/result/Range";
+import s from './styles.module.css'
 
 const CO2Usage = {
     transport: {
@@ -9,8 +11,8 @@ const CO2Usage = {
         3: 0.6
     },
     outfit: {
-        1: 50,
-        2: 0,
+        1: 10,
+        2: 100,
     },
     food: {
         1: 20,
@@ -78,11 +80,28 @@ export default function Home() {
     const yours = calculateCO2Usage(steps)
 
 
+    console.log("yours",yours)
+    console.log("max",max)
+
     return (
-        <div>
-            <p>min: {min.co2Usage}</p>
-            <p>yours: {yours.co2Usage}</p>
-            <p>min: {max.co2Usage}</p>
+        <div className={s.container}>
+            
+            <div className={s.summary}>
+                <p className="text-xl font-bold">
+                    Wpływ na środowisko:
+                </p>
+                <Range value={yours.co2Usage} min={0} max={max.co2Usage}  label="Zużycie Co2" />
+                <Range value={yours.transport} min={0} max={max.transport}  label="Transport" />
+                <Range value={yours.outfit} min={0} max={max.outfit}  label="Outfit" />
+                <Range value={yours.food} min={0} max={max.food}  label="Jedzenie" />
+                <Range value={yours.alcohol} min={0} max={max.alcohol}  label="Alkohol" />
+                <Range value={yours.attractions} min={0} max={max.attractions}  label="Atrakcje" />
+                <Range value={yours.hotel} min={0} max={max.hotel}  label="Hotel" />
+            </div>
+            
+            <p>Minimalny: {min.co2Usage}</p>
+            <p>Twój: {yours.co2Usage}</p>
+            <p>Maksymalny: {max.co2Usage}</p>
            
         </div>
     );
