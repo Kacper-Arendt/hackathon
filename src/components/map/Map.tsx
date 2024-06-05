@@ -2,11 +2,13 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import usePlacesAutocomplete, {getGeocode, getLatLng} from "use-places-autocomplete";
 import {DirectionsRenderer, GoogleMap, MarkerF, useLoadScript} from "@react-google-maps/api";
 import {PlacesAutocomplete} from "@/components/map/PlacesAutocomplete";
+import s from "./styles.module.css"
 
-export const Map = ({setDistance, setFrom, setTo}: {
+export const Map = ({setDistance, setFrom, setTo, headerClassname}: {
                         setDistance?: (distance: string) => void;
                         setFrom?: (place: string) => void;
                         setTo?: (place: string) => void
+                        headerClassname?: string
                     }
 ) => {
     const [_from, _setFrom] = useState<any>();
@@ -79,34 +81,36 @@ export const Map = ({setDistance, setFrom, setTo}: {
     }
 
     return <div className="w-full">
-        <div className="flex  gap-5">
+        <div className={headerClassname}>
+            <div className={s.header}>
 
-            <PlacesAutocomplete
-                onAddressSelect={(address) => {
-                    getGeocode({address: address}).then((results) => {
-                        const {lat, lng} = getLatLng(results[0]);
+                <PlacesAutocomplete
+                    onAddressSelect={(address) => {
+                        getGeocode({address: address}).then((results) => {
+                            const {lat, lng} = getLatLng(results[0]);
 
-                        _setFrom({lat, lng});
-                    });
-                }}
-                placeholder="Skąd?"
-            />
-            <PlacesAutocomplete
-                onAddressSelect={(address) => {
-                    getGeocode({address: address}).then((results) => {
-                        const {lat, lng} = getLatLng(results[0]);
-                        _setTo({lat, lng});
-                    });
-                }}
-                placeholder="Dokąd?"
-            />
+                            _setFrom({lat, lng});
+                        });
+                    }}
+                    placeholder="Skąd?"
+                />
+                <PlacesAutocomplete
+                    onAddressSelect={(address) => {
+                        getGeocode({address: address}).then((results) => {
+                            const {lat, lng} = getLatLng(results[0]);
+                            _setTo({lat, lng});
+                        });
+                    }}
+                    placeholder="Dokąd?"
+                />
+            </div>
         </div>
         <GoogleMap
             options={mapOptions}
             zoom={14}
             center={mapCenter}
             mapTypeId={google.maps.MapTypeId.ROADMAP}
-            mapContainerStyle={{width: '400px', height: '400px'}}
+            mapContainerStyle={{width: '100%', height: '400px'}}
             onLoad={(map) => {
                 mapRef.current = map;
                 console.log('Map Loaded');
