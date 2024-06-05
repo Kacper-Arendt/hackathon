@@ -28,3 +28,16 @@
         font-size: 2rem;
     }
 }
+
+.inputs {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%);
+    
+    
+    @media (min-width: 768px){
+        top: 65%;
+    }
+}
