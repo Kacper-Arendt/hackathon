@@ -1,6 +1,5 @@
 "use client"
 
-import {ContextProvider} from "./Context"
 export default function Layout({
                                        children,
                                    }: Readonly<{
@@ -8,9 +7,7 @@ export default function Layout({
 }>) { 
     return (
         <main>
-            <ContextProvider>
             {children}
-            </ContextProvider>
         </main>
     );
 }

@@ -77,7 +77,7 @@ export const Map = ({setDistance, setFrom, setTo, headerClassname}: {
     });
 
     if (!isLoaded) {
-        return <p>Loading...</p>;
+        return <span className="loading loading-dots loading-lg " />
     }
 
     return <div className="w-full">
