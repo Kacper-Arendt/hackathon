@@ -20,12 +20,12 @@ const defaultState: IContext = {
     from: null,
     to: null,
     steps:{
-        transport: "bus",
+        transport: 1,
         outfit: true,
         food: true,
-        alcohol: 500,
-        attractions: "wszystkie",
-        hotel: "*****"
+        alcohol: 1,
+        attractions: 1,
+        hotel: 1
     },
     setStep: (step: QuestionKey, value: any)=> {},
     setDistance: value => {},
@@ -47,6 +47,7 @@ export const ContextProvider = ({ children }: React.PropsWithChildren) => {
     const [to, setTo] = useState<string | null>(null);
 
     const setStep = (step: QuestionKey, value: any) =>{
+        console.log("dupa", steps, step, value)
         setSteps(prev=> ({...prev, [step]: value}))
     }
     
