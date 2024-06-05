@@ -24,8 +24,8 @@ const defaultState: IContext = {
         outfit: true,
         food: true,
         alcohol: 500,
-        attractions: "wszystkie",
-        hotel: "*****"
+        attractions: 1,
+        hotel: 1
     },
     setStep: (step: QuestionKey, value: any)=> {},
     setDistance: value => {},
