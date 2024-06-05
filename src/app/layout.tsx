@@ -15,7 +15,7 @@ export default function RootLayout({
     const pathname = usePathname()
     return (
         <html lang="en">
-        <body className={inter.className} style={{overflow: 'hidden'}}>
+        <body className={inter.className} style={{}}>
         <ContextProvider>
             {children}
             {pathname !== "/" &&<span onClick={()=>router.back()} className="fixed top-4 left-2 text-secondary cursor-pointer lg:text-3xl">🔙</span>}
