@@ -47,7 +47,6 @@ export const ContextProvider = ({ children }: React.PropsWithChildren) => {
     const [to, setTo] = useState<string | null>(null);
 
     const setStep = (step: QuestionKey, value: any) =>{
-        console.log("dupa", steps, step, value)
         setSteps(prev=> ({...prev, [step]: value}))
     }
     

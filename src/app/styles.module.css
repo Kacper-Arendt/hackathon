@@ -33,11 +33,17 @@
     position: absolute;
     z-index: 4;
     left: 50%;
-    top: 55%;
+    top: 50%;
+    width: 80%;
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     
     
     @media (min-width: 768px){
-        top: 65%;
+        gap: 20px;
+        top: 60%;
     }
 }

@@ -82,6 +82,7 @@ export const Map = ({setDistance, setFrom, setTo, headerClassname}: {
 
     return <div className="w-full">
         <div className={headerClassname}>
+            <p className="text-slate-50 text-center text-xl">Sprawdź, ile śladu węglowego generują Twoje podróże</p>
             <div className={s.header}>
 
                 <PlacesAutocomplete
