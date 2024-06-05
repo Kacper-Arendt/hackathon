@@ -51,7 +51,7 @@ export const PlacesAutocomplete = ({
                 disabled={!ready}
                 onChange={(e) => setValue(e.target.value)}
                 placeholder={placeholder}
-                className="input input-bordered input-success bg-slate-50 text-black"
+                className="input input-bordered input-success bg-slate-50 text-black rounded-3xl	"
             />
 
             {status === 'OK' && (
