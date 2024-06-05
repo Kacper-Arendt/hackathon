@@ -17,7 +17,7 @@ export default function Steps() {
                     header="Jaki transport wybierasz?" 
                     img="https://www.boredpanda.com/blog/wp-content/uploads/2021/07/edgy-environmentalist-memes-545474-61040212ed2cd__700.jpg"
                     items={[{
-                    label: "🚌 Autobus",
+                    label: "🚌 Autokar",
                     value: 1
                 }, {
                     label: "🚗 Samochód",
