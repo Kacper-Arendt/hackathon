@@ -1,0 +1,12 @@
+.placesAutocomplete{
+     position: relative;
+    max-width: 200px;
+    
+}
+
+.placesAutocomplete ul{
+    position: absolute;
+    z-index: 1;
+    margin-top: 8px;
+    width: 100%;
+}
