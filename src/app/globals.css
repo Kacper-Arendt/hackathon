@@ -6,3 +6,46 @@ html {
   background-color: #1d232a;
   overflow-x: hidden;
 }
+
+@keyframes falling  {
+  0%{
+    left: -200px;
+    top: 100px;
+  }
+  50%{
+    left: 50%;
+    top: 100px;
+  }
+  100%{
+    left: 50%;
+    top: calc(100vh + 120px);
+  }
+}
+
+@keyframes spin {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+#panda{
+  position: fixed;
+  left: -200px;
+  animation: falling 5s forwards, spin .8s 2.5s linear infinite;
+  height: 120px;
+  z-index: 2;
+}
+#panda2{
+  position: fixed;
+  left: -200px;
+  animation: falling 5s 1.5s forwards, spin .8s 4s linear infinite;
+  height: 120px;
+  z-index: 3;
+}
+#panda3{
+  position: fixed;
+  left: -200px;
+  animation: falling 5s 3s forwards, spin .8s 5.5s linear infinite;
+  height: 120px;
+  z-index: 4;
+}

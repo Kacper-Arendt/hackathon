@@ -3,6 +3,7 @@ import React from "react";
 import {Context, QuestionKey} from "@/app/steps/Context";
 import {Range} from "@/app/result/Range";
 import s from './styles.module.css'
+import {useRouter} from "next/navigation";
 import Image from "next/image";
 
 const CO2Usage = {
@@ -35,7 +36,7 @@ const CO2Usage = {
 export default function Home() {
     const {steps, distance} = React.useContext(Context)
     console.log(steps, distance)
-
+    const router = useRouter()
     const calculateCO2Usage = (values: Record<QuestionKey, string | number | boolean>) => {
         let co2Usage = 0;
         const distanceNumber = distance ? parseInt(distance.split(" ")[0]) : 0;
@@ -85,47 +86,53 @@ export default function Home() {
     console.log("max", max)
 
     return (
-        <div className={s.container}>
+        <div>
+            <div className={s.container}>
 
-            <div className={s.summary}>
-                <p className="text-xl font-bold">
-                    Wpływ na środowisko:
-                </p>
-                <Range value={yours.co2Usage} min={0} max={max.co2Usage} label="Zużycie Co2"/>
-                <Range value={yours.transport} min={0} max={max.transport} label="Transport"/>
-                <Range value={yours.outfit} min={0} max={max.outfit} label="Outfit"/>
-                <Range value={yours.food} min={0} max={max.food} label="Jedzenie"/>
-                <Range value={yours.alcohol} min={0} max={max.alcohol} label="Alkohol"/>
-                <Range value={yours.attractions} min={0} max={max.attractions} label="Atrakcje"/>
-                <Range value={yours.hotel} min={0} max={max.hotel} label="Hotel"/>
+                <div className={s.summary}>
+                    <p className="text-xl font-bold">
+                        Wpływ na środowisko:
+                    </p>
+                    <Range value={yours.co2Usage} min={0} max={max.co2Usage} label="Zużycie Co2"/>
+                    <Range value={yours.transport} min={0} max={max.transport} label="Transport"/>
+                    <Range value={yours.outfit} min={0} max={max.outfit} label="Outfit"/>
+                    <Range value={yours.food} min={0} max={max.food} label="Jedzenie"/>
+                    <Range value={yours.alcohol} min={0} max={max.alcohol} label="Alkohol"/>
+                    <Range value={yours.attractions} min={0} max={max.attractions} label="Atrakcje"/>
+                    <Range value={yours.hotel} min={0} max={max.hotel} label="Hotel"/>
 
-                <p>Minimalny: {min.co2Usage}</p>
-                <p>Twój: {yours.co2Usage}</p>
-                <p>Maksymalny: {max.co2Usage}</p>
+                    <p>Minimalny: {min.co2Usage}</p>
+                    <p>Twój: {yours.co2Usage}</p>
+                    <p>Maksymalny: {max.co2Usage}</p>
+                </div>
+
+                <div className={s.text}>
+
+                    <Image width={200} height={200}
+                           src="https://img.redro.pl/obrazy/czerwona-panda-na-galaz-w-lesie-na-slonecznym-dniu-700-123554399.jpg"
+                           alt="panda"/>
+
+                    <p>Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on całkowitą
+                        ilość gazów cieplarnianych, głównie dwutlenku węgla (CO₂), emitowanych bezpośrednio lub
+                        pośrednio
+                        przez daną osobę, organizację, wydarzenie czy produkt przez całe jego życie. Wysoki ślad węglowy
+                        ma
+                        katastrofalne skutki dla naszego środowiska, przyczyniając się do globalnego ocieplenia, zmiany
+                        klimatu i degradacji ekosystemów.
+                    </p>
+
+                    <p><b className="text-secondary">Zrównoważony transport:</b> korzystanie z komunikacji publicznej, jazda na rowerze, chodzenie pieszo i wybieranie samochodów elektrycznych lub hybrydowych zamiast pojazdów z silnikami spalinowymi</p>
+                    <p><b className="text-secondary">Zrównoważona moda: </b>
+                        ograniczenie ilości kupowanych ubrań, wybieranie zrównoważonych opcji takich jak second-hand, wymiana ubrań ze znajomymi i rodziną, naprawa starych ubrań </p>
+                    <p><b className="text-secondary">Zrównoważone nawyki żywieniowe:</b> ograniczenie spożycia mięsa i produktów odzwierzęcych na rzecz diety roślinnej</p>
+                </div>
             </div>
-
-            <div className={s.text}>
-                
-                <Image width={200} height={200}  src="https://img.redro.pl/obrazy/czerwona-panda-na-galaz-w-lesie-na-slonecznym-dniu-700-123554399.jpg" alt="panda" />
-                
-                <p>Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on całkowitą
-                    ilość gazów cieplarnianych, głównie dwutlenku węgla (CO₂), emitowanych bezpośrednio lub pośrednio
-                    przez daną osobę, organizację, wydarzenie czy produkt przez całe jego życie. Wysoki ślad węglowy ma
-                    katastrofalne skutki dla naszego środowiska, przyczyniając się do globalnego ocieplenia, zmiany
-                    klimatu i degradacji ekosystemów.
-                </p>
-
-                <p>Jednym z gatunków, który jest szczególnie zagrożony przez zmiany klimatu i degradację siedlisk, jest
-                    czerwona panda. Te urocze i niezwykle rzadkie zwierzęta żyją w lasach bambusowych Azji, a ich liczba
-                    drastycznie spada z powodu wycinania lasów, które są niezbędne do ich przetrwania. Wysoki ślad
-                    węglowy przyczynia się do niszczenia tych lasów, co zagraża istnieniu czerwonych pand. Bez
-                    odpowiednich działań ich populacja będzie nadal maleć, aż w końcu mogą całkowicie zniknąć z dzikiej
-                    przyrody.</p>
-                <p> Aby chronić nasze środowisko i zapobiec wyginięciu takich gatunków jak czerwona panda, musimy pilnie
-                    zmniejszyć nasz ślad węglowy. Każdy z nas może podjąć działania na rzecz ochrony planety. Oto kilka
-                    kroków, które możemy podjąć:</p>
+            <div className="w-screen flex justify-center my-20">
+                <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
+                        className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się losy
+                    pandy
+                </button>
             </div>
-
         </div>
     );
 }
