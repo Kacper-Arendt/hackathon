@@ -1,9 +1,16 @@
 .container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    padding: 10px;
+    padding: 80px 10px;
+    gap: 10px;    
+    display: grid;
+    grid-template-columns: 1fr; 
+    
+    @media (min-width: 768px){
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        
+    }
+    
+    
 }
 
 .summary{
@@ -16,7 +23,17 @@
     
     
     @media (min-width: 768px){
-        max-width:400px;
+        max-width:100%;
     }
     
+}
+
+.text{ 
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+    @media (min-width: 768px){
+        margin-top: 70px;
+    }
 }
