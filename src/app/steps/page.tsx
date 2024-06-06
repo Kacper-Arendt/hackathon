@@ -79,13 +79,13 @@ export default function Steps() {
                     header="Co planujesz robić?" 
                     img="https://i1.jbzd.com.pl/contents/2021/11/normal/bAnnaP9HAwWaZPye9hSU56Aet2dOs888.png"
                     items={[{
-                    label: "🏖️ Leżeć na plaży i się opalać",
+                    label: "🏖️ Aktywności na świeżym powietrzu(Jazda rowerem, chodzenie po górach)",
                     value: 1
                 }, {
-                    label: "🚵 Jeździć na rowerze",
+                    label: "🏛️ Zwiedzanie i aktywności kulturalne(Muzea, galerie sztuki)",
                     value: 2
                 }, {
-                    label: "🛥️ Pływać motorówką",
+                    label: "🛥️ Rejsy, pływanie motorówką i skutery wodne",
                     value: 3
                 }
                 ]}/>              
