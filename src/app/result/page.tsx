@@ -102,9 +102,9 @@ export default function Home() {
                     <Range value={yours.attractions} min={0} max={max.attractions} label="Atrakcje"/>
                     <Range value={yours.hotel} min={0} max={max.hotel} label="Hotel"/>
 
-                    <p>Minimalny: {min.co2Usage} kg CO<sub>2</sub></p>
-                    <p>Twój: {yours.co2Usage} kg CO<sub>2</sub></p>
-                    <p>Maksymalny: {max.co2Usage} kg CO<sub>2</sub></p>
+                    <p className="text-2xl">Minimalny: {min.co2Usage} kg CO<sub>2</sub></p>
+                    <p className="text-2xl">Twój: {yours.co2Usage} kg CO<sub>2</sub></p>
+                    <p className="text-2xl">Maksymalny: {max.co2Usage} kg CO<sub>2</sub></p>
                 </div>
 
                 <div className={s.text}>
