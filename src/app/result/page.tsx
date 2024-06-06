@@ -13,12 +13,12 @@ const CO2Usage = {
         3: 0.6
     },
     outfit: {
-        1: 10,
-        2: 100,
+        1: 100,
+        2: 10,
     },
     food: {
-        1: 20,
-        2: 150,
+        1: 150,
+        2: 20,
     },
     alcohol: 2, // per unit
     attractions: {
