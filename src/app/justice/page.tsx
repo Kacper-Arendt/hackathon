@@ -25,7 +25,7 @@ export default function Justice() {
     }
 
     return <div className="w-screen h-screen flex flex-col justify-center items-center">
-        <h2 className="text-2xl text-center">Gratulacje! Uratowałeś/aś małe pandy ❤️ <br/>Twój wynik to tylko
+        <h2 className="text-2xl text-center">Gratulacje!<br/>Uratowałeś/aś małe pandy ❤️ <br/>Twój wynik to tylko
              <b className="text-secondary"> {score}</b> kg CO<sub>2</sub> 👉🏻👈🏻🥹</h2>
         <img className="h-[200px]" src="/panda.png"/>
         <Confetti
