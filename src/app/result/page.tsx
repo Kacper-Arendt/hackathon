@@ -108,13 +108,13 @@ export default function Home() {
 
                 <div className={s.text}>
 
-              
 
                     <p>
                         <Image width={130} height={130} className={s.image}
                                src="https://img.redro.pl/obrazy/czerwona-panda-na-galaz-w-lesie-na-slonecznym-dniu-700-123554399.jpg"
                                alt="panda"/>
-                        Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on całkowitą
+                        Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on
+                        całkowitą
                         ilość gazów cieplarnianych, głównie dwutlenku węgla (CO₂), emitowanych bezpośrednio lub
                         pośrednio
                         przez daną osobę, organizację, wydarzenie czy produkt przez całe jego życie. Wysoki ślad węglowy
@@ -123,10 +123,28 @@ export default function Home() {
                         klimatu i degradacji ekosystemów.
                     </p>
 
-                    <p><b className="text-secondary">Zrównoważony transport:</b> korzystanie z komunikacji publicznej, jazda na rowerze, chodzenie pieszo i wybieranie samochodów elektrycznych lub hybrydowych zamiast pojazdów z silnikami spalinowymi</p>
+                    <p>Jednym z gatunków, który jest szczególnie zagrożony przez zmiany klimatu i degradację siedlisk,
+                        jest <b className="text-secondary">czerwona panda</b>. Te urocze i niezwykle rzadkie zwierzęta żyją w lasach bambusowych Azji, a
+                        ich liczba drastycznie spada z powodu wycinania lasów, które są niezbędne do ich przetrwania.
+                        Wysoki ślad węglowy przyczynia się do niszczenia tych lasów, co zagraża istnieniu czerwonych
+                        pand. Bez odpowiednich działań ich populacja będzie nadal maleć, aż w końcu mogą całkowicie
+                        zniknąć z dzikiej przyrody.
+                    </p>
+                    
+                    <p> Aby chronić nasze środowisko i zapobiec wyginięciu takich gatunków jak <b className="text-secondary">czerwona
+                        panda</b>, musimy
+                        pilnie zmniejszyć nasz ślad węglowy. Każdy z nas może podjąć działania na rzecz ochrony planety.
+                        Oto kilka kroków, które możemy podjąć:
+                    </p>
+                    
+                    <p><b className="text-secondary">Zrównoważony transport:</b> korzystanie z komunikacji publicznej,
+                        jazda na rowerze, chodzenie pieszo i wybieranie samochodów elektrycznych lub hybrydowych zamiast
+                        pojazdów z silnikami spalinowymi</p>
                     <p><b className="text-secondary">Zrównoważona moda: </b>
-                        ograniczenie ilości kupowanych ubrań, wybieranie zrównoważonych opcji takich jak second-hand, wymiana ubrań ze znajomymi i rodziną, naprawa starych ubrań </p>
-                    <p><b className="text-secondary">Zrównoważone nawyki żywieniowe:</b> ograniczenie spożycia mięsa i produktów odzwierzęcych na rzecz diety roślinnej</p>
+                        ograniczenie ilości kupowanych ubrań, wybieranie zrównoważonych opcji takich jak second-hand,
+                        wymiana ubrań ze znajomymi i rodziną, naprawa starych ubrań </p>
+                    <p><b className="text-secondary">Zrównoważone nawyki żywieniowe:</b> ograniczenie spożycia mięsa i
+                        produktów odzwierzęcych na rzecz diety roślinnej</p>
                 </div>
             </div>
             <div className="w-screen flex justify-center my-16">
