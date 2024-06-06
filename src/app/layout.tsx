@@ -4,6 +4,7 @@ import "./globals.css";
 import {ContextProvider} from "@/app/steps/Context";
 import {usePathname, useRouter} from "next/navigation";
 import Head from "next/head";
+
 import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({subsets: ["latin"]});
