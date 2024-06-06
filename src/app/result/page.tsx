@@ -103,7 +103,7 @@ export default function Home() {
                     <Range value={yours.hotel} min={0} max={max.hotel} label="Hotel"/>
 
                     <p className="text-2xl">Minimalny: {min.co2Usage} kg CO<sub>2</sub></p>
-                    <p className="text-2xl">Twój: {yours.co2Usage} kg CO<sub>2</sub></p>
+                    <p className="text-2xl">Twój: <span className="text-secondary">{yours.co2Usage}</span> kg CO<sub>2</sub></p>
                     <p className="text-2xl">Maksymalny: {max.co2Usage} kg CO<sub>2</sub></p>
                 </div>
 
@@ -125,19 +125,26 @@ export default function Home() {
                     </p>
 
                     <p>Jednym z gatunków, który jest szczególnie zagrożony przez zmiany klimatu i degradację siedlisk,
-                        jest <b className="text-secondary">czerwona panda</b>. Te urocze i niezwykle rzadkie zwierzęta żyją w lasach bambusowych Azji, a
+                        jest <b className="text-secondary">czerwona panda</b>. Te urocze i niezwykle rzadkie zwierzęta
+                        żyją w lasach bambusowych Azji, a
                         ich liczba drastycznie spada z powodu wycinania lasów, które są niezbędne do ich przetrwania.
                         Wysoki ślad węglowy przyczynia się do niszczenia tych lasów, co zagraża istnieniu czerwonych
                         pand. Bez odpowiednich działań ich populacja będzie nadal maleć, aż w końcu mogą całkowicie
                         zniknąć z dzikiej przyrody.
                     </p>
-                    
-                    <p> Aby chronić nasze środowisko i zapobiec wyginięciu takich gatunków jak <b className="text-secondary">czerwona
+
+                        <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
+                                className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się
+                            losy
+                            pandy
+                        </button>
+                    <p> Aby chronić nasze środowisko i zapobiec wyginięciu takich gatunków jak <b
+                        className="text-secondary">czerwona
                         panda</b>, musimy
                         pilnie zmniejszyć nasz ślad węglowy. Każdy z nas może podjąć działania na rzecz ochrony planety.
                         Oto kilka kroków, które możemy podjąć:
                     </p>
-                    
+
                     <p><b className="text-secondary">Zrównoważony transport:</b> korzystanie z komunikacji publicznej,
                         jazda na rowerze, chodzenie pieszo i wybieranie samochodów elektrycznych lub hybrydowych zamiast
                         pojazdów z silnikami spalinowymi</p>
@@ -148,7 +155,7 @@ export default function Home() {
                         produktów odzwierzęcych na rzecz diety roślinnej</p>
                 </div>
             </div>
-            <div className="w-screen flex justify-center my-16">
+            <div className="w-screen flex justify-center mt-8">
                 <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
                         className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się losy
                     pandy
