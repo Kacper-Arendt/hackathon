@@ -2,7 +2,7 @@
 
 import React from "react";
 import "../globals.css"
-import { useSearchParams } from 'next/navigation'
+import {useRouter, useSearchParams} from 'next/navigation'
 import Confetti from 'react-confetti'
 
 export default function Justice() {
@@ -11,6 +11,7 @@ export default function Justice() {
     const maxScore = searchParams.get('maxScore') as string
     const percent: number = (parseInt(score) / parseInt(maxScore)) * 100
     console.log(`score: ${score}, max score: ${maxScore}, percent: ${percent}`)
+    const router = useRouter()
 
     if (percent > 50) {
         return (<div className="w-screen h-screen overflow-hidden relative flex justify-center">
@@ -20,14 +21,14 @@ export default function Justice() {
             <img id="panda" src="/panda.png"/>
             <img id="panda2" src="/panda.png"/>
             <img id="panda3" src="/panda.png"/>
-            <img src="/asset.gif" className="w-[400px] fixed z-50 -bottom-[50px] left-1/2 -translate-x-1/2"/>
+            <img src="/asset.gif" className="w-[400px] fixed z-50 -bottom-[50px] left-1/2 -translate-x-1/2" onClick={() =>router.push('qr')}/>
         </div>)
     }
 
     return <div className="w-screen h-screen flex flex-col justify-center items-center">
         <h2 className="text-2xl text-center">Gratulacje!<br/>Uratowałeś/aś małe pandy ❤️ <br/>Twój wynik to tylko
              <b className="text-secondary"> {score}</b> kg CO<sub>2</sub> 👉🏻👈🏻🥹</h2>
-        <img className="h-[200px]" src="/panda.png"/>
+        <img className="h-[200px]" src="/panda.png" onClick={() =>router.push('qr')} />
         <Confetti
             className="w-screen h-screen"
             numberOfPieces={200}
