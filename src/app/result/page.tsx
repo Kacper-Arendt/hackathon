@@ -49,7 +49,8 @@ export default function Home() {
         const hotel = CO2Usage.hotel[values.hotel as keyof typeof CO2Usage.hotel] ?? 0;
 
         co2Usage = transport + outfit + food + alcohol + attractions + hotel
-
+        co2Usage = Math.round(co2Usage * 0.2)
+        
         return {
             co2Usage,
             transport,
@@ -101,9 +102,9 @@ export default function Home() {
                     <Range value={yours.attractions} min={0} max={max.attractions} label="Atrakcje"/>
                     <Range value={yours.hotel} min={0} max={max.hotel} label="Hotel"/>
 
-                    <p>Minimalny: {min.co2Usage}</p>
-                    <p>Twój: {yours.co2Usage}</p>
-                    <p>Maksymalny: {max.co2Usage}</p>
+                    <p>Minimalny: {min.co2Usage} kg CO<sub>2</sub></p>
+                    <p>Twój: {yours.co2Usage} kg CO<sub>2</sub></p>
+                    <p>Maksymalny: {max.co2Usage} kg CO<sub>2</sub></p>
                 </div>
 
                 <div className={s.text}>
