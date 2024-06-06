@@ -48,7 +48,7 @@ export default function Home() {
         const attractions = CO2Usage.attractions[values.attractions as keyof typeof CO2Usage.attractions] ?? 0;
         const hotel = CO2Usage.hotel[values.hotel as keyof typeof CO2Usage.hotel] ?? 0;
 
-        co2Usage = transport + outfit + food + alcohol + attractions + hotel
+        co2Usage = (transport) + outfit + food + alcohol + attractions + hotel
         co2Usage = Math.round(co2Usage * 0.2)
         
         return {
@@ -95,7 +95,7 @@ export default function Home() {
                         Wpływ na środowisko:
                     </p>
                     <Range value={yours.co2Usage} min={0} max={max.co2Usage} label="Zużycie Co2"/>
-                    <Range value={yours.transport} min={0} max={max.transport} label="Transport"/>
+                    <Range value={yours.transport || 400} min={0} max={max.transport || 700} label="Transport"/>
                     <Range value={yours.outfit} min={0} max={max.outfit} label="Outfit"/>
                     <Range value={yours.food} min={0} max={max.food} label="Jedzenie"/>
                     <Range value={yours.alcohol} min={0} max={max.alcohol} label="Alkohol"/>
