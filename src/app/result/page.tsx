@@ -64,8 +64,8 @@ export default function Home() {
 
     const min = calculateCO2Usage({
         transport: 1,
-        outfit: 1,
-        food: 1,
+        outfit: 2,
+        food: 2,
         alcohol: 0,
         attractions: 1,
         hotel: 1
