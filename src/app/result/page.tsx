@@ -73,8 +73,8 @@ export default function Home() {
 
     const max = calculateCO2Usage({
         transport: 3,
-        outfit: 2,
-        food: 2,
+        outfit: 1,
+        food: 1,
         alcohol: 3,
         attractions: 3,
         hotel: 3
