@@ -14,7 +14,9 @@ export default function Justice() {
 
     if (percent > 50) {
         return (<div className="w-screen h-screen overflow-hidden relative flex justify-center">
-            <h2 className="fixed top-[40px] text-xl left-1/2 -translate-x-1/2 text-center">Zobacz, co narobiłeś/aś! 🪦</h2>
+            <h2 className="fixed top-[40px] text-xl left-1/2 -translate-x-1/2 text-center">Zobacz, co narobiłeś/aś! 💀 <br/> Twój
+                ślad węglowy to aż <b className="text-secondary">{score}</b> kg CO<sub>2</sub>!</h2>
+
             <img id="panda" src="/panda.png"/>
             <img id="panda2" src="/panda.png"/>
             <img id="panda3" src="/panda.png"/>
@@ -23,7 +25,8 @@ export default function Justice() {
     }
 
     return <div className="w-screen h-screen flex flex-col justify-center items-center">
-        <h2 className="text-2xl text-center">Gratulacje! Uratowałeś/aś małe pandy ❤️</h2>
+        <h2 className="text-2xl text-center">Gratulacje! Uratowałeś/aś małe pandy ❤️ <br/>Twój wynik to tylko
+             <b className="text-secondary"> {score}</b> kg CO<sub>2</sub> 👉🏻👈🏻🥹</h2>
         <img className="h-[200px]" src="/panda.png"/>
         <Confetti
             className="w-screen h-screen"
