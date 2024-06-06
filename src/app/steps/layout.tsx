@@ -1,4 +1,5 @@
 "use client"
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Layout({
                                        children,
@@ -8,6 +9,7 @@ export default function Layout({
     return (
         <main>
             {children}
+            <Analytics />
         </main>
     );
 }
