@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <main className={s.main}
         >
-            <p className={s.title}>Generator śladu węglowego imienia Taylor Swift</p>
+            <p className={s.title}>Kalkulator śladu węglowego imienia Taylor Swift</p>
             <div className={s.bg}/>
             {distance &&
                 <DistanceSummary distance={distance}/>
