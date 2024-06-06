@@ -19,7 +19,7 @@ export const Map = ({setDistance, setFrom, setTo, headerClassname}: {
     const libraries = useMemo(() => ['places'], []);
 
     const {} = usePlacesAutocomplete({
-        requestOptions: {componentRestrictions: {country: 'pl'}},
+        requestOptions: {componentRestrictions: {country: null}},
         debounce: 300,
         cache: 86400,
     });
