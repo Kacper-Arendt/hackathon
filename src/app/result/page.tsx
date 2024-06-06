@@ -87,7 +87,7 @@ export default function Home() {
     console.log("max", max)
 
     return (
-        <div>
+        <div className="pb-8">
             <div className={s.container}>
 
                 <div className={s.summary}>
@@ -134,9 +134,7 @@ export default function Home() {
                     </p>
 
                         <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
-                                className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się
-                            losy
-                            pandy
+                                className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak Twoje decyzje wpłynęły na losy pandy
                         </button>
                     <p> Aby chronić nasze środowisko i zapobiec wyginięciu takich gatunków jak <b
                         className="text-secondary">czerwona
@@ -157,8 +155,7 @@ export default function Home() {
             </div>
             <div className="w-screen flex justify-center mt-8">
                 <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
-                        className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się losy
-                    pandy
+                        className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak Twoje decyzje wpłynęły na losy pandy
                 </button>
             </div>
         </div>
