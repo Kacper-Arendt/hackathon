@@ -4,6 +4,7 @@ import "./globals.css";
 import {ContextProvider} from "@/app/steps/Context";
 import {usePathname, useRouter} from "next/navigation";
 import Head from "next/head";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -33,6 +34,7 @@ export default function RootLayout({
             {pathname !== "/" && <span onClick={() => router.back()}
                                        className="fixed top-4 left-2 text-secondary cursor-pointer lg:text-3xl">🔙</span>}
         </ContextProvider>
+        <Analytics />
         </body>
         </html>
     );
