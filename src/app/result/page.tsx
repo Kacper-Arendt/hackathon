@@ -108,11 +108,13 @@ export default function Home() {
 
                 <div className={s.text}>
 
-                    <Image width={200} height={200}
-                           src="https://img.redro.pl/obrazy/czerwona-panda-na-galaz-w-lesie-na-slonecznym-dniu-700-123554399.jpg"
-                           alt="panda"/>
+              
 
-                    <p>Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on całkowitą
+                    <p>
+                        <Image width={130} height={130} className={s.image}
+                               src="https://img.redro.pl/obrazy/czerwona-panda-na-galaz-w-lesie-na-slonecznym-dniu-700-123554399.jpg"
+                               alt="panda"/>
+                        Ślad węglowy jest jednym z najpoważniejszych problemów współczesnego świata. Oznacza on całkowitą
                         ilość gazów cieplarnianych, głównie dwutlenku węgla (CO₂), emitowanych bezpośrednio lub
                         pośrednio
                         przez daną osobę, organizację, wydarzenie czy produkt przez całe jego życie. Wysoki ślad węglowy
@@ -127,7 +129,7 @@ export default function Home() {
                     <p><b className="text-secondary">Zrównoważone nawyki żywieniowe:</b> ograniczenie spożycia mięsa i produktów odzwierzęcych na rzecz diety roślinnej</p>
                 </div>
             </div>
-            <div className="w-screen flex justify-center my-20">
+            <div className="w-screen flex justify-center my-16">
                 <button onClick={() => router.push(`/justice?score=${yours.co2Usage}&maxScore=${max.co2Usage}`)}
                         className="btn btn-secondary px-8 rounded-3xl animate-pulse">Zobacz, jak potoczyły się losy
                     pandy
